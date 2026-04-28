@@ -1,0 +1,102 @@
+/* CENTRADO GENERAL */
+.contenedor {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.contacto {
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+    text-align: center;
+}
+
+/* FORMULARIO CONTENEDOR */
+.formulario {
+    background-color: #0b1a2e; /* Azul muy oscuro como la foto */
+    padding: 3rem;
+    border-radius: 10px;
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Crea 2 columnas iguales */
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+/* ESTILO DE INPUTS Y TEXTAREA */
+.formulario input,
+.formulario textarea {
+    width: 100%;
+    padding: 1.2rem;
+    border-radius: 5px;
+    border: none;
+    font-family: 'Krub', sans-serif;
+    
+}
+
+/* EL TELÉFONO SE QUEDA EN LA IZQUIERDA (solo 1 columna) */
+.campo-medio {
+    grid-column: 1 / 2;
+}
+
+/* EL MENSAJE OCUPA LAS 2 COLUMNAS */
+.formulario textarea {
+    grid-column: 1 / 3;
+    height: 10rem;
+    resize: none;
+    color: #d7e1ee;
+}
+
+/* BOTÓN ENVIAR */
+.boton {
+    grid-column: 1 / 3; /* Ocupa todo el ancho */
+    background-color: #1a388a; /* Azul del botón */
+    color: white;
+    font-size: 1.8rem;
+    font-weight: 700;
+    padding: 1.5rem;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color .3s;
+}
+
+.boton:hover {
+    background-color: #2546a5;
+}
+
+/* SECCIÓN INFERIOR (Correo y WhatsApp) */
+.correo-seccion {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+
+.correo-seccion p {
+    margin-bottom: 0.5rem;
+}
+
+.correo-seccion a {
+    color: #4f46e5;
+    text-decoration: underline;
+}
+
+.whatsapp {
+    display: inline-block;
+    background-color: #25D366;
+    color: white;
+    padding: 1.2rem 2.5rem;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    margin-top: 1rem;
+}
+
+.whatsapp:hover {
+    background-color: #1ebe5d;
+}
+
+/* FOOTER */
+.footer {
+    text-align: center;
+    padding: 2rem;
+    margin-top: 2rem;
+}
+

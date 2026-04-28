@@ -1,0 +1,211 @@
+:root {
+    --blanco: #f5f7fa;
+    --oscuro: #1f2937;
+    --primario: #1e3a8a; /* azul elegante */
+    --secundario: #111827; /* negro azulado */
+    --gris: #374151;
+    --grisClaro: #dbeafe;
+    --acento: #c4b5fd; /* toque elegante */
+}
+
+/* Globales */
+html {
+    font-size: 62.5%;
+    box-sizing: border-box;
+    scroll-snap-type: y mandatory;
+}
+
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+body {
+    font-size: 16px;
+    font-family: 'Krub', sans-serif;
+    background-image: linear-gradient(to top, #e5e7eb 0%, #ffffff 100%);
+    color: var(--oscuro);
+}
+
+/* Contenedor */
+.contenedor {
+    max-width: 120rem;
+    margin: 0 auto;
+}
+
+/* Botones */
+.boton {
+    background-color: var(--primario);
+    color: var(--blanco);
+    padding: 1.2rem 3rem;
+    margin-top: 3rem;
+    font-size: 1.8rem;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: bold;
+    border-radius: .8rem;
+    border: none;
+    transition: all .3s ease;
+}
+
+.boton:hover {
+    background-color: var(--acento);
+    color: var(--secundario);
+    transform: translateY(-2px);
+    cursor: pointer;
+}
+
+/* Sombra elegante */
+.sombra {
+    box-shadow: 0px 10px 25px rgba(0,0,0,0.1);
+    background-color: #ffffff;
+    padding: 2.5rem;
+    border-radius: 1.2rem;
+}
+
+/* Tipografía */
+h1 { font-size: 3.8rem; font-weight: 700; }
+h2 { font-size: 2.8rem; font-weight: 600; }
+h3 { font-size: 2rem; font-weight: 500; }
+
+h1, h2, h3 {
+    text-align: center;
+    color: var(--secundario);
+}
+
+/* Navegación */
+.nav-bg {
+    background-color: var(--secundario);
+}
+
+.navegacion-principal {
+    display: flex;
+    flex-direction: column;
+}
+
+@media (min-width: 768px) {
+    .navegacion-principal {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+}
+
+.navegacion-principal a {
+    color: var(--blanco);
+    text-decoration: none;
+    font-size: 1.8rem;
+    padding: 1.5rem;
+    transition: all .3s ease;
+}
+
+.navegacion-principal a:hover {
+    background-color: var(--primario);
+    border-radius: .5rem;
+}
+
+/* Hero */
+.hero {
+    background-image: url(../img/hero.jpg);
+    background-size: cover;
+    height: 450px;
+    position: relative;
+    margin-bottom: 3rem;
+}
+
+
+.contenido-hero {
+    position: absolute;
+    width: 100%;
+    background: rgba(0,0,0,0.6);
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.contenido-hero h2,
+.contenido-hero p {
+    color: var(--blanco);
+}
+
+/* Servicios */
+@media (min-width: 768px) {
+    .servicios {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 2rem;
+    }
+}
+
+.servicio {
+    text-align: center;
+}
+
+.servicio h3 {
+    color: var(--primario);
+}
+
+.servicio p {
+    line-height: 1.8;
+    color: var(--gris);
+}
+
+.servicio {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.servicio .iconos {
+    height: 14rem;
+    width: 14rem;
+    background: linear-gradient(135deg, var(--primario), var(--acento));
+    border-radius: 50%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+
+.servicio .iconos svg {
+    width: 40px;
+    height: 40px;
+    display: block;
+}
+
+/* Formulario */
+.formulario {
+    background-color: var(--secundario);
+    width: min(60rem, 100%);
+    margin: 0 auto;
+    padding: 3rem;
+    border-radius: 1rem;
+}
+
+.formulario legend {
+    text-align: center;
+    font-size: 2rem;
+    font-weight: bold;
+    color: var(--acento);
+}
+
+.campo label {
+    color: var(--blanco);
+}
+
+.input-text {
+    width: 100%;
+    padding: 1.2rem;
+    border-radius: .5rem;
+    border: none;
+}
+
+/* Footer */
+.footer {
+    text-align: center;
+    color: var(--gris);
+    margin-top: 2rem;
+}
+
