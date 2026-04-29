@@ -100,38 +100,96 @@
     border-top: 1px solid #eaeaea;
 }
 
-/* BOTÓN IR ARRIBA */
-#btnTop {
-    position: fixed;
-    bottom: 30px;
-    right: 30px;
-    background-color: #1e3a8a;
+/* --- ANIMACIÓN DE COLORES (NOMBRE) --- */
+.titulo {
+    background: linear-gradient(90deg, #1e3a8a, #c4b5fd, #1e3a8a);
+    background-size: 200%;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    animation: colores 3s linear infinite;
+}
+@keyframes colores { to { background-position: 200%; } }
+
+/* --- MODO NOCHE TOTAL (Respetado) --- */
+body.dark, body.dark main, body.dark .sombra, body.dark footer { 
+    background-color: #0f172a !important; 
+    color: #f8fafc !important; 
+    background-image: none !important; 
+}
+body.dark h1, body.dark h2, body.dark h3 { 
+    color: #c4b5fd !important; 
+}
+
+/* --- BOTONES FLOTANTES CON ANIMACIÓN --- */
+.fijo { 
+    position: fixed !important; /* Mantiene el botón flotando en pantalla */
+    z-index: 9999; 
+    cursor: pointer; 
+    border: none; 
+    border-radius: 50%; 
+    padding: 15px; 
+    font-size: 20px;
+    background: #1e3a8a;
     color: white;
-    border: none;
-    padding: 15px 18px;
-    font-size: 18px;
-    border-radius: 50%;
-    cursor: pointer;
-    display: none; /* oculto al inicio */
+    box-shadow: 0px 4px 15px rgba(0,0,0,0.5);
+    transition: transform 0.3s ease, background 0.3s;
+}
+
+/* Animación al pasar el mouse */
+.fijo:hover { 
+    transform: scale(1.2) rotate(10deg); 
+    background: #c4b5fd;
+}
+
+/* Posiciones exactas */
+#btntop { bottom: 20px; right: 20px; display: none; }
+#btnTheme { top: 20px; right: 20px; }
+
+/* --- BOTÓN VOLVER ARRIBA ANIMADO --- */
+#btntop {
+    display: none;
+    position: fixed;
+    bottom: 60px;
+    right: 30px;
     z-index: 1000;
-    box-shadow: 0px 5px 15px rgba(0,0,0,0.3);
-    transition: all 0.3s ease;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%; /* Figura CIRCULAR */
+    border: none;
+    cursor: pointer;
+    background: linear-gradient(135deg, #1e388a, #c4b5fd); /* COLORES */
+    color: white;
+    font-size: 1.2rem;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    transition: all 0.3s ease-in-out;
+    /* Animación de "latido" constante */
+    animation: pulsoBoton 2s infinite;
 }
 
-#btnTop:hover {
-    background-color: #c4b5fd;
-    color: black;
-    transform: scale(1.1);
+@keyframes pulsoBoton {
+    0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(30, 58, 138, 0.7); }
+    70% { transform: scale(1.05); box-shadow: 0 0 0 10px rgba(30, 58, 138, 0); }
+    100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(30, 58, 138, 0); }
 }
 
-
-@keyframes flotar {
-    0%,100% { transform: translateY(0); }
-    50% { transform: translateY(-10px); }
+#btntop:hover {
+    transform: translateY(-5px) scale(1.1); /* Se eleva al pasar el mouse */
+    filter: brightness(1.2);
 }
 
-/* 3. Interacción al hacer clic */
-.click.active {
-    transform: scale(1.1);
-    background: linear-gradient(135deg, #1e3a8a, #c4b5fd);
+/* --- MODO NOCHE TOTAL Y ANIMACIONES DE TÍTULOS --- */
+body.dark {
+    background-color: #111827 !important;
+    color: white !important;
 }
+
+body.dark .titulo {
+    animation: pulsoColores 4s infinite; /* ANIMACIÓN DE TÍTULO */
+}
+
+@keyframes pulsoColores {
+    0%, 100% { color: #c4b5fd; text-shadow: 0 0 5px #c4b5fd; }
+    50% { color: #f8fafc; text-shadow: 0 0 10px #f8fafc; }
+}
+

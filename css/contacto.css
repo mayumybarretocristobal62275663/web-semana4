@@ -74,7 +74,7 @@
 }
 
 .correo-seccion a {
-    color: #4f46e5;
+    color: #050413;
     text-decoration: underline;
 }
 
@@ -98,5 +98,88 @@
     text-align: center;
     padding: 2rem;
     margin-top: 2rem;
+}
+
+  /* --- ANIMACIÓN DE COLORES (NOMBRE) --- */
+.titulo {
+    background: linear-gradient(90deg, #1e3a8a, #c4b5fd, #1e3a8a);
+    background-size: 200%;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    animation: colores 3s linear infinite;
+}
+@keyframes colores { to { background-position: 200%; } }
+
+/* --- MODO NOCHE TOTAL (Respetado) --- */
+body.dark, body.dark main, body.dark .sombra, body.dark footer { 
+    background-color: #0f172a !important; 
+    color: #f8fafc !important; 
+    background-image: none !important; 
+}
+body.dark h1, body.dark h2, body.dark h3 { 
+    color: #c4b5fd !important; 
+}
+
+/* --- BOTONES FLOTANTES CON ANIMACIÓN --- */
+.fijo { 
+    position: fixed !important; /* Mantiene el botón flotando en pantalla */
+    z-index: 9999; 
+    cursor: pointer; 
+    border: none; 
+    border-radius: 50%; 
+    padding: 15px; 
+    font-size: 20px;
+    background: #1e3a8a;
+    color: white;
+    box-shadow: 0px 4px 15px rgba(0,0,0,0.5);
+    transition: transform 0.3s ease, background 0.3s;
+}
+
+/* Animación al pasar el mouse */
+.fijo:hover { 
+    transform: scale(1.2) rotate(10deg); 
+    background: #c4b5fd;
+}
+
+/* Posiciones exactas */
+#btntop { bottom: 20px; right: 20px; display: none; }
+#btnTheme { top: 20px; right: 20px; }
+
+/* --- BOTÓN VOLVER ARRIBA ANIMADO --- */
+#btntop {
+    /* ... lo que ya tienes ... */
+    display: none; /* Se mantiene oculto hasta el scroll */
+    flex-direction: column; /* Alinea si hay icono y texto */
+    justify-content: center; /* Centra vertical */
+    align-items: center;    /* Centra horizontal */
+    text-align: center;
+    line-height: 1;         /* Para que las letras no estén separadas */
+    padding: 10px;
+}
+@keyframes pulsoBoton {
+    0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(30, 58, 138, 0.7); }
+    70% { transform: scale(1.05); box-shadow: 0 0 0 10px rgba(30, 58, 138, 0); }
+    100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(30, 58, 138, 0); }
+}
+
+#btntop:hover {
+    transform: translateY(-5px) scale(1.1); /* Se eleva al pasar el mouse */
+    filter: brightness(1.2);
+}
+
+/* --- MODO NOCHE TOTAL Y ANIMACIONES DE TÍTULOS --- */
+body.dark {
+    background-color: #111827 !important;
+    color: white !important;
+}
+
+body.dark .titulo {
+    animation: pulsoColores 4s infinite; /* ANIMACIÓN DE TÍTULO */
+}
+
+@keyframes pulsoColores {
+    0%, 100% { color: #c4b5fd; text-shadow: 0 0 5px #c4b5fd; }
+    50% { color: #f8fafc; text-shadow: 0 0 10px #f8fafc; }
 }
 
