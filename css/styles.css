@@ -209,3 +209,43 @@ h1, h2, h3 {
     margin-top: 2rem;
 }
 
+
+/* --- SISTEMA DE ANIMACIONES PROFESIONAL --- */
+
+/* Estado inicial: invisible y un poco más abajo */
+.fade-in {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+/* Estado activo: cuando el JS detecta que el usuario llegó al elemento */
+.fade-in.visible {
+    opacity: 1 !important;
+    transform: translateY(0) !important;
+}
+
+/* --- BOTÓN IR ARRIBA (Fixed) --- */
+#btnTop {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background-color: #1e3a8a; /* Tu color primario */
+    color: white;
+    border: none;
+    width: 50px;
+    height: 50px;
+    font-size: 20px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: none; /* JS lo muestra al bajar */
+    z-index: 9999;
+    box-shadow: 0px 5px 15px rgba(0,0,0,0.3);
+    transition: all 0.3s ease;
+}
+
+#btnTop:hover {
+    background-color: #c4b5fd; /* Tu color de acento */
+    transform: scale(1.1) translateY(-5px);
+}
+
