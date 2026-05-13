@@ -84,7 +84,48 @@
             </footer>
         </blockquote>
     </div>
+   <blockquote class="testimonio-card">
+            <div class="comillas-decorativas">“</div>
+            <p class="testimonio-texto">"Gran profesional, volvería a trabajar con ella."</p>
+            <footer class="cliente-info">
+                <img src="img/cliente6.jpg" alt="Foto de Sofía Castillo" class="cliente-foto">
+                <cite class="cliente-nombre">Sofía Castillo</cite>
+            </footer>
+        </blockquote>
+    </div>
+    <section class="contenedor">
+    <h2 class="titulo-seccion">Déjanos tu opinión nos ayudadara a mejorar</h2>
+    
+<form class="formulario-pro" method="POST" action="guardarclientes.php">
+        <fieldset>
+            <legend>Tus Datos</legend>
+            
+            <div class="contenedor-campos-pro">
+                <div class="campo">
+                    <label>Nombre</label>
+                    <input type="text" placeholder="Tu Nombre" name="nombre" required>
+                </div>
+
+                <div class="campo">
+                    <label>Correo</label>
+                    <input type="email" placeholder="Tu Email" name="correo"required>
+                </div>
+
+                <div class="campo">
+                    <label>Mensaje</label>
+                    <textarea name="mensaje" placeholder="Escribe aquí tu mensaje..."required></textarea>
+                </div>
+            </div>
+
+            <div class="enviar-contenedor">
+                <input class="boton-enviar" type="submit" value="ENVIAR">
+            </div>
+        </fieldset>
+    </form>
+</section>
+  
 </main>
+
 
 <footer class="footer">
     <p>Todos los derechos reservados - Mayumy, BARRETO CRISTÓBAL</p>

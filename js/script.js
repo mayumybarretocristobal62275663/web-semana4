@@ -1,31 +1,49 @@
 document.addEventListener("DOMContentLoaded", () => {
-    // 1. MODO NOCHE (Sin cambios, tal cual lo pediste)
+    // --- 1. MODO NOCHE ---
     const btnTheme = document.createElement("button");
-    btnTheme.innerHTML = "🌙";
     btnTheme.id = "btnTheme";
     btnTheme.className = "fijo"; 
     document.body.appendChild(btnTheme);
 
+    const modoGuardado = localStorage.getItem("tema");
+
+    if (modoGuardado === "dark") {
+        document.body.classList.add("dark");
+        btnTheme.innerHTML = "☀️"; 
+    } else {
+        btnTheme.innerHTML = "🌙";
+    }
+
     btnTheme.onclick = () => {
         document.body.classList.toggle("dark");
-        btnTheme.innerHTML = document.body.classList.contains("dark") ? "☀️" : "🌙";
-    };
-
-    // 2. BOTÓN VOLVER ARRIBA (Corregido)
-    const btntop = document.getElementById("btntop"); // Nombre unificado
-
-    window.onscroll = () => {
-        // Se muestra al bajar 100px
-        if (window.scrollY > 100) {
-            btntop.style.display = "block";
+        if (document.body.classList.contains("dark")) {
+            btnTheme.innerHTML = "☀️";
+            localStorage.setItem("tema", "dark");
         } else {
-            btntop.style.display = "none";
+            btnTheme.innerHTML = "🌙";
+            localStorage.setItem("tema", "light");
         }
     };
 
-    btntop.onclick = () => {
-        window.scrollTo({ top: 0, behavior: "smooth" });
+    // --- 2. BOTÓN VOLVER ARRIBA ---
+    const btnSubir = document.createElement("button");
+    btnSubir.id = "btnSubir";
+    btnSubir.innerHTML = "↑";
+    btnSubir.className = "fijo-subir"; // Asegúrate de tener este estilo en CSS
+    document.body.appendChild(btnSubir);
+
+    // Ocultar botón al inicio
+    btnSubir.style.display = "none";
+
+    window.onscroll = () => {
+        if (window.scrollY > 300) {
+            btnSubir.style.display = "block";
+        } else {
+            btnSubir.style.display = "none";
+        }
     };
 
-    
+    btnSubir.onclick = () => {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+    };
 });

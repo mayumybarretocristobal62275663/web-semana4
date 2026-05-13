@@ -35,18 +35,23 @@
 
 <main class="contenedor contacto">
 
-    <h2>Contáctame</h2>
+   <h2>Contáctame</h2>
 
-    <!-- FORMULARIO (MISMA ESTRUCTURA) -->
-    <form class="formulario">
-        <input type="text" placeholder="Tu nombre" required>
-        <input type="email" placeholder="Tu correo" required>
-        <input type="tel" placeholder="Tu teléfono">
-        <textarea placeholder="Escribe tu mensaje"></textarea>
+<!-- FORMULARIO -->
+<form id="miFormulario" action="guardar.php" method="POST" class="formulario">
+    <input type="hidden" name="origen" value="Contacto">
+    
+    <input type="text" name="nombre" placeholder="Tu nombre" required>
 
-        <input class="boton" type="submit" value="Enviar">
-    </form>
+    <input type="email" name="correo" placeholder="Tu correo" required>
 
+    <input type="tel" name="telefono" placeholder="Tu teléfono">
+
+    <textarea name="mensaje" placeholder="Escribe tu mensaje" required></textarea>
+
+    <input class="boton" type="submit" value="Enviar">
+
+</form>
     <!-- CORREO -->
     <div class="correo">
         📧 Escríbeme a:

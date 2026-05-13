@@ -3,15 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Diseñador Freelancer</title>
-    <link rel="preload" href="css/normalize.css" as="style">
-    <link rel="stylesheet" href="css/normalize.css">
-    <link href="https://fonts.googleapis.com/css2?family=Krub:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="preload" href="css/styles.css" as="style">
-    <link href="css/styles.css" rel="stylesheet">
-   
+    <title>Barreto Cristóbal, Mayumy | Web Services</title>
     
-</head>
+    <link href="https://fonts.googleapis.com/css2?family=Krub:wght@400;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="css/normalize.css">
+    
+    <link rel="stylesheet" href="css/styles.css?v=2.0">
+</head>>
 
 <body>
     <header>
@@ -28,20 +27,18 @@
     </div>
     
     <section class="hero">
-        <div class="contenido-hero">
-            <h2>Mi primera pagina web de Servicios </h2> 
-            <div class="ubicacion">
-                <svg xmlns="http://www.w3.org/2000/svg" width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-map-pins"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M10.828 9.828a4 4 0 1 0 -5.656 0l2.828 2.829l2.828 -2.829" />
-                    <path d="M8 7l0 .01" />
-                    <path d="M18.828 17.828a4 4 0 1 0 -5.656 0l2.828 2.829l2.828 -2.829" />
-                    <path d="M16 15l0 .01" />
-                </svg>
-                <p>Cerro de Pasco, Yanacancha</p>
-            </div>
-            <a class="boton" href="#">Contactar</a>
-        </div> <!-- .contenido-hero --> 
-       
-    </section>
+    <video autoplay muted loop playsinline class="video-bg">
+        <source src="img/video-carro.mp4" type="video/mp4">
+    </video>
+
+    <div class="contenido-hero">
+        <h2>Mi primera página web de Servicios</h2> 
+        <div class="ubicacion">
+            <p>Cerro de Pasco, Yanacancha</p>
+        </div>
+        <a class="boton" href="#contacto-home">Contactar</a>
+    </div> 
+</section>
     
     <main class="contenedor sombra">
         <h2>Mis Servicios</h2>
@@ -128,40 +125,39 @@
         </div> <!--.servicios-->
     
         <section>
-            <h2>Contacto</h2>
+    <h2>Contacto</h2>
 
-            <form class="formulario">
-                <fieldset>
-                    <legend>Contactános llenando todos los campos</legend>
+    <form id="contacto-home" class="formulario" method="POST" action="guardar_index.php">
+        <fieldset>
+            <legend>Contactános llenando todos los campos</legend>
+            <input type="hidden" name="origen" value="Inicio">
 
-                    <div class="contenedor-campos">
-                        <div class="campo">
-                            <label>Nombre</label>
-                            <input class="input-text" type="text" placeholder="Tu Nombre">
-                        </div>
+            <div class="contenedor-campos">
+                <div class="campo">
+                    <label for="nombre">Nombre</label>
+                    <input class="input-text" type="text" id="nombre" name="nombre" placeholder="Tu Nombre" required>
+                </div>
 
-                        <div class="campo">
-                            <label>Teléfono</label>
-                            <input class="input-text" type="tel" placeholder="Tu Teléfono">
-                        </div>
+                <div class="campo">
+                    <label for="telefono">Teléfono</label>
+                    <input class="input-text" type="tel" id="telefono" name="telefono" placeholder="Tu Teléfono" required>
+                </div>
 
-                        <div class="campo">
-                            <label>Correo</label>
-                            <input class="input-text" type="email" placeholder="Tu Email">
-                        </div>
-                
-                        <div class="campo">
-                            <label>Mensaje</label>
-                            <textarea class="input-text"></textarea>
-                        </div>
-                    </div> <!-- .contenedor-campos -->
+                <div class="campo">
+                    <label for="correo">Correo</label>
+                    <input class="input-text" type="email" id="correo" name="correo" placeholder="Tu Email" required>
+                </div>
 
-                    <div class="alinear-derecha flex">
-                        <input class="boton w-sm-100" type="submit" value="Enviar">
-                    </div>
-                </fieldset>
-            </form>
-        </section>
+                <div class="campo">
+                    <label for="mensaje">Mensaje</label>
+                    <textarea class="input-text" id="mensaje" name="mensaje" required></textarea>
+                </div>
+            </div> <div class="alinear-derecha flex">
+                <input class="boton w-sm-100" type="submit" value="ENVIAR">
+            </div>
+        </fieldset>
+    </form>
+</section>
 
     </main>
     
